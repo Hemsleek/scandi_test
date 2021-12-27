@@ -1,0 +1,10 @@
+.Checkout {
+  &::before {
+    @include after-mobile {
+      display: none;
+    }
+  }
+}
+.test {
+  color: red;
+}

@@ -1,0 +1,77 @@
+:root {
+  --progress-color: var(--primary-base-color);
+}
+
+.ProgressBar {
+  display: flex;
+  align-items: center;
+  background: var(--breadcrumbs-background);
+  min-height: var(--breadcrumbs-height);
+
+  width: 100vw;
+  padding: 2rem 0 4rem 0;
+  color: #fff;
+
+  .progressLine {
+    position: relative;
+    flex-grow: 1;
+    height: 3px;
+    background-color: rgba(128, 128, 128, 0.1);
+
+    &.active::before {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+
+      background-color: var(--progress-color);
+      animation: loader 3s ease-in-out forwards;
+    }
+  }
+
+  .stepDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.4rem;
+    position: relative;
+    height: fit-content;
+
+    &.active {
+      .stepName {
+        color: rgb(0, 0, 0);
+      }
+      .stepNumber {
+        background-color: var(--progress-color);
+      }
+    }
+
+    .stepNumber {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: rgba(128, 128, 128, 0.1);
+    }
+
+    .stepName {
+      position: absolute;
+      bottom: -2rem;
+      text-transform: capitalize;
+      color: rgba(0, 0, 0, 0.4);
+      font-weight: 700;
+    }
+  }
+}
+@keyframes loader {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
