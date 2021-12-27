@@ -47,21 +47,9 @@ export class ProgressBar extends PureComponent {
     }
 
     render() {
-        //  const { onBillingSuccess, onBillingError } = this.props;
 
         return (
-            //  <Form
-            //    mix={ { block: 'CheckoutBilling' } }
-            //    id={ BILLING_STEP }
-            //    onSubmitError={ onBillingError }
-            //    onSubmitSuccess={ onBillingSuccess }
-            //  >
-            //      { this.renderAddresses() }
-            //      { this.renderPayments() }
-            //      { this.renderTermsAndConditions() }
-            //      { this.renderActions() }
-            //      { this.renderPopup() }
-            //  </Form>
+
             <div className='ProgressBar'>
                 {this.renderSteps()}
             </div>
